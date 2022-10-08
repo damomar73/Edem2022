@@ -7,4 +7,4 @@ RUN apt-get install -y nginx
 
 EXPOSE 80
 
-ENTRYPOINT /usr/sbin/nginx - g "daemon off;"
+ENTRYPOINT /usr/sbin/nginx -g "daemon off;"
