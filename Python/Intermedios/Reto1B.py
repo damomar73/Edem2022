@@ -76,12 +76,28 @@ discos = [
   }
   ]
 #check 1: comprobamos que la lista se imprime correctamente
+# print(len(discos[0]['Nombre']))
 #pprint.pprint(discos)
 
 #bucle para imprimir las lista de discos 
 for idx, disc in enumerate(discos):
     print(f'> Nº disco: {idx+1} > Disco: {disc["Nombre"]} > Artista: {disc["Artista"]} > Precio: {disc["Precio"]} > Genero: {disc["Genero"]}')
-seleccion2 = int(input ("> Selecciona un disco y 0 para finalizar la compra: "))-1
+
+carrito = list()
+count = 0
+
+while True:
+    seleccion = int(input ("> Selecciona un disco y 0 para finalizar la compra: "))-1
+    if seleccion == -1:
+        break
+    else:
+        #opcion 1
+        carrito.append(discos[seleccion])
+        #otra 2
+        #carrito.append({'album:'discos[seleccion]['Nombre']}, 'precio:' discos[seleccion]['Precio'], 'Genero:' discos[seleccion]['Genero'])
+
+print (carrito)
+count += 1
 
 #check 2
 #print(seleccion)
@@ -89,37 +105,38 @@ seleccion2 = int(input ("> Selecciona un disco y 0 para finalizar la compra: "))
 
 precioCarrito = 0
 cantidadDescuento = 0
+precioCesta = 0
+
+
+#opcion 1
+for i in carrito:
+    if i['Genero'] == 'Electro' or i['Genero'] == 'Black metal':
+        precioCarrito += i['Precio']*0.7
+        cantidadDescuento += i['Precio']*0.3
+    else:
+        precioCesta += i['Precio']
+
 
 '''
-if discos[seleccion]['Genero'] == 'Electro' or discos[seleccion]['Genero'] == 'Black metal':
-    precioCesta = discos[seleccion]['Precio']*0.7
-    cantidadDescuento = discos[seleccion]['Precio']*0.3
-else:
-    precioCesta = discos[seleccion]['Precio']
-    
+#opcion 2
+for i in range(len(carrito)):
+    if carrito[i]['Genero'] == 'Electro' or carrito[i]['Genero'] == 'Black metal':
+        precioCarrito:float = i['Precio']*0.7
+        cantidadDescuento:float = i['Precio']*0.3
+    else:
+        precioCesta = carrito[i]['Precio']
+'''
+
+'''
+#opcion 3
+for idx, i in enumerate(carrito):
+    if carrito[idx]['genero'] == 'Electro' or carrito[idx]['genero'] == 'Black metal':
+        precioCarrito:float = carrito[i]['Precio']*0.7
+        cantidadDescuento:float = carrito[i]['Precio']*0.3
+    else:
+        precioCesta = carrito[i]['Precio']
+'''
+
+print(f'> Fecha: {datetime.now()}')
 print(f'> Precio de la cesta: {precioCesta}€')
 print(f'> Precio del descuento: {cantidadDescuento}€')
-'''
-
-PrecioTotalCesta = [precioCarrito]
-DescuentoTotal = [cantidadDescuento]
-
-
-while seleccion2 != -1:
-  if discos[seleccion2]['Genero'] == 'Electro' or discos[seleccion2]['Genero'] == 'Black metal':
-    precioCesta2 = discos[seleccion2]['Precio']*0.7
-    cantidadDescuento2 = discos[seleccion2]['Precio']*0.3
-    PrecioTotalCesta.append(precioCesta2)
-    DescuentoTotal.append(cantidadDescuento2)
-  else:
-    precioCesta2 = discos[seleccion2]['Precio']
-    PrecioTotalCesta.append(precioCesta2)
-  seleccion2 = int(input ("> En caso de querer comprar otro disco selecciona otro numero o pulsa 0 para finalizar la compra: "))-1
-
-totalCesta = sum(PrecioTotalCesta)
-totalDto = sum(DescuentoTotal)
-fecha = datetime.today().strftime('%d-%m-%Y')
-
-print(f'> Fecha: {fecha}')
-print(f'> Precio Total de la cesta: {totalCesta}€')
-print(f'> Precio Total del descuento: {totalDto}€')
