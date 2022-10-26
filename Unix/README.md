@@ -1,4 +1,4 @@
-# FUNDAMENTOS LINUX
+/# FUNDAMENTOS LINUX
 ## Información
     •	El Linux/Unix/Mac los programas se instalan siempre en la misma ubicación
     •	En Microsoft los programas se instalan cada vez en una ubicación (hay que averiguar dónde)
@@ -24,7 +24,7 @@ url
 
     Antes hay que abrir el programa “Docker desktop”!!!! (se puede comprobar si está abierto tecleando docker ps)
 
-    •	docker create -it --name unix ubuntu:latest		crea un contenedor
+    •	docker create -it --name unix ubuntu:latest	crea un contenedor
     •	docker start unix					arranca el contenedor
     •	docker exec -it unix /bin/bash
 
