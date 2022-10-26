@@ -101,7 +101,7 @@ DevOps --> integra infraestructuras y desarrollo
   - el orden en que esta escrito es muy importante
   - cada comando es una capa
   - docker build . --> crea una imagen del dockerfile, importente estar en la misma carpeta y el archivo SIEMPRE debe llamarse "dockerfile"
-   - docker built -t "nombre" --> crea una imagen que se llama "nombre"
+  - docker build -t "nombre" . --> crea una imagen que se llama "nombre"
    
 
   
