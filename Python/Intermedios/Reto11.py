@@ -5,12 +5,12 @@ def nif():
   opcion = 0
   while opcion != '6':
     if opcion == '1':
-        nif = input('> Introduce NIF del cliente: ')
-        nombre = input('> Introduce el nombre del cliente: ')
-        apellidos = input('> Introduce los apellidos del cliente: ')
-        telefono = input('> Introduce el teléfono del cliente: ')
-        email = input('> Introduce el email del cliente: ')
-        preferente = input('> ¿Es un cliente VIP (S/N)? ')
+        nif = str(input('> Introduce NIF del cliente: '))
+        nombre = str(input('> Introduce el nombre del cliente: '))
+        apellidos = str(input('> Introduce los apellidos del cliente: '))
+        telefono = str(input('> Introduce el teléfono del cliente: '))
+        email = str(input('> Introduce el email del cliente: '))
+        preferente = bool(input('> ¿Es un cliente VIP (S/N)? '))
         cliente = {'nombre':nombre, 'apellidos':apellidos, 'teléfono':telefono, 'email':email, 'preferente':preferente=='S'}
         clientes[nif] = cliente
     if opcion == '2':
