@@ -1,5 +1,6 @@
 #reto 11 - NIVEL INTERMEDIO/AVANZADO
-def retoav11():
+
+def nif():
   clientes = {}
   opcion = 0
   while opcion != '6':
@@ -36,3 +37,6 @@ def retoav11():
             if valor['preferente']:
                 print(clave, valor['nombre'])
     opcion = input('MENU OPCIONES\n(1) Añadir un cliente\n(2) Eliminar cliente por NIF\n(3) Mostrar cliente por NIF\n(4) Mostrar TODOS los clientes\n(5) Mostrar UNICAMENTE los clientes preferentes\n(6) Finalizar programa\n> Elige una opción: ')
+    
+if __name__ == "__main__":
+    nif()
