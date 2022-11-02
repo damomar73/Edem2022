@@ -1,6 +1,5 @@
 #reto 1 - NIVEL INTERMEDIO/AVANZADO
-#def retoav1():
-from doctest import DONT_ACCEPT_TRUE_FOR_1
+
 import pprint
 from datetime import datetime
 discos = [ 

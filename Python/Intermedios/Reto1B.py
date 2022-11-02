@@ -1,6 +1,5 @@
 #reto 1 - NIVEL INTERMEDIO/AVANZADO
 #def retoav1():
-from doctest import DONT_ACCEPT_TRUE_FOR_1
 import pprint
 from datetime import datetime
 discos = [ 
@@ -105,8 +104,6 @@ count += 1
 
 precioCarrito = 0
 cantidadDescuento = 0
-precioCesta = 0
-
 
 #opcion 1
 for i in carrito:
@@ -114,7 +111,7 @@ for i in carrito:
         precioCarrito += i['Precio']*0.7
         cantidadDescuento += i['Precio']*0.3
     else:
-        precioCesta += i['Precio']
+        precioCarrito += i['Precio']
 
 
 '''
@@ -138,5 +135,5 @@ for idx, i in enumerate(carrito):
 '''
 
 print(f'> Fecha: {datetime.now()}')
-print(f'> Precio de la cesta: {precioCesta}€')
+print(f'> Precio de la cesta: {precioCarrito}€')
 print(f'> Precio del descuento: {cantidadDescuento}€')
