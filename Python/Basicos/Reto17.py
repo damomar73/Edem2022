@@ -17,7 +17,7 @@ def tupla():
   #devuelve la tupla con un salto cada 4 elementos
   print (tupla[::4])
   #usa un step negativo para mostrar la tupla desde la posicion 9 a la 2
-  print (tupla[9::-1])  
+  print (tupla[9:1:-1])  
 
 if __name__ == "__main__":
   tupla()
